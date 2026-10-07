@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Contacto</title>
+    <link rel="stylesheet" href="js/laboratorio/styles.css">
+</head>
+<body>
+
+    <div class="form-container">
+        
+        <!-- Sección Izquierda: Formulario -->
+        <div class="form-section">
+            <h1>Formulario de contacto</h1>
+            <p class="subtitle">Por favor, completa tu información y te enviaremos tu pedido en un abrir y cerrar de ojos.</p>
+            
+            <form action="php/enviar.php" method="POST" id="form-contacto">
+                
+                <!-- Nombre y Apellido -->
+                <div class="form-group row">
+                    <label>Tu Nombre</label>
+                    <div class="input-row">
+                        <input type="text" placeholder="Nombre" required>
+                        <input type="text" placeholder="Apellido" required>
+                    </div>
+                </div>
+
+                <!-- Correo Electrónico -->
+                <div class="form-group">
+                    <label>Tu Correo</label>
+                    <input type="email" placeholder="ej. hola@contacto.net" required>
+                </div>
+
+                <!-- Teléfono (Múltiples Campos) -->
+                <div class="form-group row">
+                    <label>Teléfono*</label>
+                    <div class="input-row phone-row">
+                        <input type="text" placeholder="###" maxlength="3" required>
+                        <input type="text" placeholder="###" maxlength="3" required>
+                        <input type="text" placeholder="####" maxlength="4" required>
+                    </div>
+                </div>
+
+                <!-- Asunto -->
+                <div class="form-group">
+                    <label>Asunto del Mensaje *</label>
+                    <select required>
+                        <option value="other">Otro</option>
+                        <option value="support">Soporte Técnico</option>
+                        <option value="sales">Ventas</option>
+                    </select>
+                </div>
+
+                <!-- Mensaje -->
+                <div class="form-group">
+                    <label>Mensaje *</label>
+                    <textarea rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                </div>
+
+                <!-- Verificación / CAPTCHA Falso para Estilo -->
+                <div class="form-group verification-group">
+                    <label>Verificación *</label>
+                    <div class="captcha-box">
+                        <label class="captcha-container">
+                            <input type="checkbox" required>
+                            <span class="checkmark"></span>
+                            No soy un robot
+                        </label>
+                        <div class="captcha-icon">
+                            <img src="https://wikimedia.org" alt="reCAPTCHA">
+                            <span>Privacidad - Términos</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Línea Divisoria -->
+                <div class="divider"></div>
+
+                <!-- Botón de Envío -->
+                <button type="submit" class="submit-btn">ENVIAR FORMULARIO</button>
+
+            </form>
+        </div>
+
+        <!-- Sección Derecha: Arte Abstracto Diagonal -->
+        <div class="art-section">
+            <div class="diagonal-shape shape1"></div>
+            <div class="diagonal-shape shape2"></div>
+            <div class="diagonal-shape shape3"></div>
+            <div class="diagonal-shape shape4"></div>
+        </div>
+
+    </div>
+
+    <!-- PASO 1: Agregar la librería de SweetAlert2 -->
+    <script src="https://jsdelivr.net"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

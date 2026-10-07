@@ -1,0 +1,247 @@
+/* Reseteo General de Estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #eef2f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Contenedor Principal del Formulario */
+.form-container {
+    background: linear-gradient(135deg, #1fa2ff 0%, #12d6df 50%, #06beb6 100%);
+    width: 100%;
+    max-width: 950px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    color: #ffffff;
+}
+
+/* Sección del Formulario (Izquierda) */
+.form-section {
+    flex: 1.2;
+    padding: 50px 60px;
+    z-index: 2;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 40px;
+}
+
+/* Estilos de los Grupos de Campos */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+/* Comportamiento en Fila para etiquetas laterales */
+.form-group.row {
+    flex-direction: row;
+    align-items: center;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    width: 140px; /* Ancho fijo para alinear inputs hacia la izquierda */
+    flex-shrink: 0;
+}
+
+/* Alineación para inputs sin fila nativa */
+.form-group:not(.row) label {
+    margin-bottom: 6px;
+    width: auto;
+}
+
+/* Cajas de Texto, Selects y Textareas */
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    max-width: 450px;
+    padding: 10px 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: #ffffff;
+    font-size: 0.9rem;
+    color: #333333;
+    outline: none;
+}
+
+input::placeholder {
+    color: #b3b3b3;
+}
+
+/* Filas con Multiples Inputs (Nombres y Teléfono) */
+.input-row {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    max-width: 450px;
+}
+
+.input-row input {
+    flex: 1;
+}
+
+.phone-row input {
+    text-align: center;
+}
+
+/* Campo de Mensaje */
+textarea {
+    resize: none;
+}
+
+/* Caja de Validación Falsa (Estilo ReCaptcha) */
+.verification-group {
+    flex-direction: row !important;
+    align-items: center;
+}
+
+.captcha-box {
+    background: #ffffff;
+    color: #000000;
+    border: 1px solid #d3d3d3;
+    border-radius: 3px;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 250px;
+    height: 74px;
+}
+
+.captcha-container {
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    color: #555;
+    cursor: pointer;
+    width: auto !important;
+}
+
+.captcha-container input {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+.captcha-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.6rem;
+    color: #9b9b9b;
+}
+
+.captcha-icon img {
+    width: 26px;
+    height: 26px;
+    margin-bottom: 2px;
+}
+
+/* Línea Divisoria y Botón */
+.divider {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin: 25px 0;
+    max-width: 590px;
+}
+
+.submit-btn {
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    padding: 10px 24px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #ffffff;
+    color: #1fa2ff;
+}
+
+/* Sección Arte de la Derecha (Formas geométricas) */
+.art-section {
+    flex: 0.8;
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+}
+
+/* Simulación de las barras inclinadas en la imagen */
+.diagonal-shape {
+    position: absolute;
+    transform: rotate(-45deg);
+    border-radius: 50px;
+}
+
+.shape1 {
+    width: 40px;
+    height: 250px;
+    background-color: rgba(254, 209, 54, 0.8); /* Amarillo */
+    top: -20px;
+    right: 100px;
+}
+
+.shape2 {
+    width: 50px;
+    height: 350px;
+    background-color: rgba(240, 95, 64, 0.8); /* Coral / Rojo */
+    top: 50px;
+    right: 40px;
+}
+
+.shape3 {
+    width: 35px;
+    height: 200px;
+    background-color: rgba(43, 201, 115, 0.7); /* Verde claro */
+    bottom: 50px;
+    right: 150px;
+}
+
+/* Adaptación para pantallas móviles */
+@media (max-width: 768px) {
+    .form-container {
+        flex-direction: column;
+    }
+    .art-section {
+        display: none; /* Esconde los gráficos abstractos en móvil */
+    }
+    .form-section {
+        padding: 30px 20px;
+    }
+    .form-group.row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .form-group label {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}

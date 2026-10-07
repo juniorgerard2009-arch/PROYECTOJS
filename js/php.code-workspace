@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../php"
+		},
+		{
+			"path": "../.git"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {}
+}
